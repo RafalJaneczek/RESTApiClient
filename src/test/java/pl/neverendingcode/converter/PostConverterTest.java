@@ -1,5 +1,8 @@
 package pl.neverendingcode.converter;
 
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,11 +11,22 @@ import pl.neverendingcode.model.Post;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
+@Slf4j
 @SpringBootTest
 class PostConverterTest {
 
     @Autowired
     private PostConverter postConverter;
+
+    @BeforeAll
+    static void before_all() {
+        log.info("Start unit tests of PostConverter class");
+    }
+
+    @AfterAll
+    static void after_all() {
+        log.info("Finish unit tests of PostConverter class");
+    }
 
     @Test
     void convert_to_post() {
