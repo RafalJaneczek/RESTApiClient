@@ -1,0 +1,5 @@
+server:
+  port: 8082
+posts:
+  api:
+    url: 'https://jsonplaceholder.typicode.com/'
